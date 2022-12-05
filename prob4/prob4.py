@@ -36,7 +36,7 @@ def part1LessCode(input):
     return answer
 
 
-#PART 2 Haha it is literally just changing all to any
+#PART 2, Haha it is literally just changing 'all' to 'any'
 def part2(input):
     with open(input) as f:
         allPairs = f.read().split("\n")
@@ -46,16 +46,11 @@ def part2(input):
             pair2 = pair.split(",")[1]
             pair1Range = range(int(pair1.split("-")[0]), int(pair1.split("-")[1])+1)
             pair2Range = range(int(pair2.split("-")[0]), int(pair2.split("-")[1])+1)
-            if any(x in pair1Range for x in pair2Range) or any(x in pair2Range for x in pair1Range):
+            if any(x in pair1Range for x in pair2Range) or any(x in pair2Range for x in pair1Range): #funny line
                 answer += 1
 
         f.close()
     return answer
-
-
-
-
-
 
 
 print(f"PART 1: {part1LessCode(input)}")
